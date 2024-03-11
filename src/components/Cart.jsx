@@ -15,6 +15,12 @@ import { Link } from 'react-router-dom'
         const total = calculateTotal();
         alert(`Total Price: ₹${total}`);
       };
+      
+      const BuyNow =() => {
+        alert("Order Placed");
+      }
+
+      
     return (
     <>
       <div className="container-cart " style={{width:"55%"}}>
@@ -44,6 +50,7 @@ import { Link } from 'react-router-dom'
                           ₹{product.price}
                     </button>
                     <button 
+                      onClick={()=>BuyNow()}
                       className="btn btn-warning mx-3">Buy Now
                     </button>
                     <button 

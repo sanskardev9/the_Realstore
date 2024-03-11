@@ -32,24 +32,24 @@ const ProductDetails = ({cart, setCart}) => {
   }
   
   setCart([...cart,obj]);
-  console.log("Your Cart: ",cart)
-  toast.success('Added to Cart', {
-    position: "top-right",
-    autoClose: 1500,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "dark",
-    });
+//   console.log("Your Cart: ",cart)
+//   toast.success('Added to Cart', {
+//     position: "top-right",
+//     autoClose: 1500,
+//     hideProgressBar: false,
+//     closeOnClick: true,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "dark",
+//     });
 }
   
 
 
   return (
     <>
-        <ToastContainer
+        {/* <ToastContainer
                 position="top-right"
                 autoClose={1500}
                 hideProgressBar={false}
@@ -60,7 +60,7 @@ const ProductDetails = ({cart, setCart}) => {
                 draggable
                 pauseOnHover
                 theme="dark"
-        />
+        /> */}
 
         <div className="container con">
           <div className="img">
@@ -72,9 +72,9 @@ const ProductDetails = ({cart, setCart}) => {
                     <button className="btn btn-primary mx-3">
                       ₹{product.price}
                     </button>
-                    <button 
+                    {/* <button 
                       onClick={()=>addToCart(product.id, product.price, product.title, product.description, product.imgSrc)}
-                      className="btn btn-warning ">Add To Cart</button>
+                      className="btn btn-warning ">Add To Cart</button> */}
           </div>
         </div>
         <h1></h1>
