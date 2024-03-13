@@ -2,10 +2,45 @@ import React, { useState } from 'react'
 import { Link,useLocation, useNavigate } from 'react-router-dom'
 import { items } from './Data'
 import { HiShoppingCart } from 'react-icons/hi';
+import {signInWithPopup, GoogleAuthProvider, getAuth} from 'firebase/auth'
+import {db} from '../firebase.config'
+import {doc, setDoc, getDoc, serverTimestamp} from'firebase/firestore'
+import { FcGoogle } from "react-icons/fc";
+
 
 const Navbar = ({setData, cart}) => {
-
+  const auth = getAuth();
   const navigate = useNavigate();
+  
+
+  const googleClick =async() =>{
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    // console.log(result.user);
+    const user = result.user;
+
+    // checking for User
+    const docRef = doc(db,"users",user.uid)
+    const docSnap = await getDoc(docRef)
+
+    if(!docSnap.exists()){
+      await setDoc(doc(db,"users",user.uid),{
+        name:user.displayName,
+        email:user.email,
+        photoUrl:user.photoURL,
+        timeStamp:serverTimestamp()
+      })
+    }
+    navigate("/");
+  } 
+
+  const logOut = async() => {
+    await auth.signOut();
+    // console.log("logout")
+    navigate('/');
+  }
+
+  
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -67,9 +102,9 @@ const Navbar = ({setData, cart}) => {
                   placeholder='Search Products'
                 />
             </form>
-
+            
             <Link to={"/cart"} className="cart">
-              <button type="button" className="btn btn-primary position-relative">
+              <button type="button" className="btn btn-warning position-relative" >
               <HiShoppingCart style={{fontSize:'1.5rem'}}/>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {cart.length} 
@@ -79,6 +114,24 @@ const Navbar = ({setData, cart}) => {
                 </span>
               </button>
             </Link>
+
+            {(auth.currentUser)?(
+
+              <>
+                <div className='user-data'>
+                <img className='user-img' src={auth.currentUser?.photoURL}/>
+                <h6>{auth.currentUser?.displayName}</h6>
+                </div>
+                <button onClick={()=>logOut()} className='logout-btn btn btn-primary' style={{fontSize:'13px'}}>Logout</button>
+              </>
+            
+            ):(
+
+              <button className='login-btn btn btn-primary'
+                onClick={()=>googleClick()}>
+                <FcGoogle style={{height:'24px', width:'24px'}} /> Login with Google</button>
+            )}
+ 
 
         </div>
 
@@ -101,6 +154,7 @@ const Navbar = ({setData, cart}) => {
     </header>
     </>
   )
+  
 }
 
 export default Navbar;
