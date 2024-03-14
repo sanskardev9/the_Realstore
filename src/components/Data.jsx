@@ -1,8 +1,8 @@
-export const items =  [
+  export const items =  [
     {
       id: 1,
       category: 'mobiles',
-      title: "Apple iPhone 14",
+      title: " Apple iphone 14 ",
       imgSrc: 'https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg',
       amazonLink: 'https://amzn.to/3PuckZp',
       description: 'Apple iPhone 14 (128 GB) - Blue',

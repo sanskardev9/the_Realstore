@@ -6,9 +6,10 @@ import {signInWithPopup, GoogleAuthProvider, getAuth} from 'firebase/auth'
 import {db} from '../firebase.config'
 import {doc, setDoc, getDoc, serverTimestamp} from'firebase/firestore'
 import { FcGoogle } from "react-icons/fc";
+import Cart from './Cart';
 
 
-const Navbar = ({setData, cart}) => {
+const Navbar = ({setData, cartData}) => {
   const auth = getAuth();
   const navigate = useNavigate();
   
@@ -107,13 +108,14 @@ const Navbar = ({setData, cart}) => {
               <button type="button" className="btn btn-warning position-relative" >
               <HiShoppingCart style={{fontSize:'1.5rem'}}/>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {cart.length} 
+                  {cartData.length} 
                  <span 
                     className="visually-hidden">unread messages
                   </span>
                 </span>
               </button>
             </Link>
+
 
             {(auth.currentUser)?(
 
@@ -158,4 +160,18 @@ const Navbar = ({setData, cart}) => {
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

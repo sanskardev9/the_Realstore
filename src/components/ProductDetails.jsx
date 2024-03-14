@@ -16,7 +16,7 @@ const ProductDetails = ({cart, setCart}) => {
     setproduct(filterProduct[0])
     
     const relatedProducts = items.filter((relProduct) => relProduct.category === product.category)
-    // console.log("RelatedProducts -", relatedProducts)
+    
     setRelatedProducts(relatedProducts)
   }, [id,product.category]);
   

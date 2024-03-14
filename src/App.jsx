@@ -12,19 +12,20 @@ import UserProfile from './components/UserProfile'
 
 const App = () => {
 
-  const [data, setData] = useState([...items])
-  const [cart, setCart] = useState([])
+  const [data, setData] = useState([...items]);
+  const [cart, setCart] = useState([]);
+  const [cartData, setCartData] = useState([]); 
 
   return (
     <>
     <Router>
-    <Navbar cart={cart} setData={setData}/>
+    <Navbar cartData ={cartData} cart={cart} setData={setData}/>
       <Routes>
 
         <Route path='/' element={<Product cart={cart} setCart={setCart} items={data}/>}/>
         <Route path='/product/:id' element={<ProductDetails cart={cart} setCart={setCart}/>}/>
         <Route path='/search/:term' element={<SearchItem cart={cart} setCart={setCart}/>}/>
-        <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>}/>
+        <Route path='/cart' element={<Cart cart={cartData} setCart={setCartData}/>}/>
         <Route path='/user-profile' element={<UserProfile />} />
         
       </Routes>
