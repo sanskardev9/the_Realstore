@@ -7,6 +7,9 @@ import Cart from './components/Cart'
 import { items } from './components/Data'
 import SearchItem from './components/SearchItem'
 import UserProfile from './components/UserProfile'
+import EmailLogin from './components/EmailLogin'
+import { getAuth } from 'firebase/auth';
+
 
 
 
@@ -15,18 +18,22 @@ const App = () => {
   const [data, setData] = useState([...items]);
   const [cart, setCart] = useState([]);
   const [cartData, setCartData] = useState([]); 
+  const auth = getAuth();
+  const user = auth.currentUser;
+  
 
   return (
     <>
     <Router>
-    <Navbar cartData ={cartData} cart={cart} setData={setData}/>
+    <Navbar  cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData}/>
       <Routes>
 
-        <Route path='/' element={<Product cart={cart} setCart={setCart} items={data}/>}/>
-        <Route path='/product/:id' element={<ProductDetails cart={cart} setCart={setCart}/>}/>
-        <Route path='/search/:term' element={<SearchItem cart={cart} setCart={setCart}/>}/>
-        <Route path='/cart' element={<Cart cart={cartData} setCart={setCartData}/>}/>
+        <Route path='/' element={<Product  user={user} cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData} items={data}/>}/>
+        <Route path='/product/:id' element={<ProductDetails  cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData}/>}/>
+        <Route path='/search/:term' element={<SearchItem  cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData}/>}/>
+        <Route path='/cart' element={<Cart user={user} cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData}/>}/>
         <Route path='/user-profile' element={<UserProfile />} />
+        <Route path='/email-login' element={<EmailLogin />} />
         
       </Routes>
   

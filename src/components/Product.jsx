@@ -3,8 +3,40 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Product = ({items, cart, setCart}) => {
+const Product = ({items, cart, setCart, cartData, setCartData, user}) => {
+
+    const addToCartInFirebase = async(id, price, title, description, imgSrc) => {
+      
+      console.log("Adding to cart in Firebase:");
+      console.log("ID:", id);
+      console.log("Price:", price);
+      console.log("Title:", title);
+      console.log("Description:", description);
+      console.log("Image source:", imgSrc);
+        // const uniqueId = cartData.length + 1;
+        const obj = {
+          // id: uniqueId,
+          productId:id,
+          price,
+          title, 
+          description, 
+          imgSrc
+      }
+      await setCartData([...cartData,obj]);
+      toast.success('Added to Cart in firebase.', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    }   
+
     const addToCart = (id, price, title, description, imgSrc) => {
+      console.log("Added to cart ")
       const uniqueId = cart.length + 1;
       const obj = {
         id: uniqueId,
@@ -28,8 +60,7 @@ const Product = ({items, cart, setCart}) => {
       });
 }
 
-
-
+console.log(user);
  
   return (
     <>  
@@ -72,9 +103,19 @@ const Product = ({items, cart, setCart}) => {
                       <button className="btn btn-primary mx-3">
                         ₹{product.price}
                       </button>
-                      <button 
-                      onClick={()=>addToCart(product.id, product.price, product.title, product.description, product.imgSrc)}
-                      className="btn btn-warning ">Add To Cart</button>
+
+                      {user?(
+                        <button
+                        onClick={()=>addToCartInFirebase(product.id, product.price, product.title, product.description, product.imgSrc)}
+                        className="btn btn-warning ">Add To Cart</button>
+                      ):(
+                        <button
+                        onClick={()=>addToCart(product.id, product.price, product.title, product.description, product.imgSrc)}
+                        className="btn btn-warning ">Add To Cart</button>
+                      )
+                        
+                      }
+
                     </div>
                   </div>
                 </div>
@@ -123,4 +164,14 @@ export default Product;
 //       });
 //     }
 //   };
+
+
+
+
+
+
+
+
+
+
 
