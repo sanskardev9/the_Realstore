@@ -25,7 +25,7 @@ const App = () => {
   return (
     <>
     <Router>
-    <Navbar  cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData}/>
+    <Navbar  cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData} setData={setData}/>
       <Routes>
 
         <Route path='/' element={<Product  user={user} cart={cart} setCart={setCart} cartdata={cartData} setcartdata={setCartData} items={data}/>}/>

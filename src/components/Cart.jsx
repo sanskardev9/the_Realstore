@@ -26,7 +26,7 @@ const Cart = ({ cart, setCart }) => {
         const cartCollectionRef = collection(db, 'users', userId, 'cart');
         const data = await getDocs(cartCollectionRef);
         const filteredData = data.docs.map((doc) => 
-        console.log("doc.data():", doc.data())
+        
         ({
           ...doc.data(),
           id: doc.id,
@@ -90,9 +90,16 @@ const Cart = ({ cart, setCart }) => {
                       <div className="card mb-3 " style={{ width: '700px', margin: '0 auto', display: 'block' }}>
                         <div className="row g-0">
                           <div className="col-md-4">
-                          <Link to={`/product/${product.prod_Id}`}>
-                            <img src={product.imgSrc} className="img-fluid rounded-start" alt="..." />
-                          </Link>
+                            {userId?(
+                              <Link to={`/product/${product.prod_Id}`}>
+                                <img src={product.imgSrc} className="img-fluid rounded-start" alt="..." />
+                              </Link>):(
+                                <Link to={`/product/${product.id}`}>
+                                <img src={product.imgSrc} className="img-fluid rounded-start" alt="..." />
+                              </Link>)
+                              }
+                            
+                          
                           </div>
                           <div className="col-md-8">
                             <div className="card-body text-center">

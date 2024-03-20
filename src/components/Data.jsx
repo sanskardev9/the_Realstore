@@ -9,6 +9,15 @@
       price: '56999',
     },
     {
+      id: 8,
+      category: 'laptops',
+      title: "Apple MacBook Air Laptop",
+      imgSrc: 'https://m.media-amazon.com/images/I/71TPda7cwUL._SL1500_.jpg',
+      amazonLink: 'https://amzn.to/3r9rvhm',
+      description: 'Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, ',
+      price: '77990',
+    },
+    {
       id: 5,
       category: 'laptops',
       title: "Xiaomi [Smartchoice] Notebookpro",
@@ -72,14 +81,15 @@
       description: 'Samsung Galaxy Tab A8 26.69cm (10.5 inch) Display, RAM 4 GB, ROM 64 GB Expandable, Wi-Fi Tablet, Gray, (SM-X200NZAEINU)',
       price: '49999',
     },
+    
     {
-      id: 8,
-      category: 'laptops',
-      title: "Apple MacBook Air Laptop",
-      imgSrc: 'https://m.media-amazon.com/images/I/71TPda7cwUL._SL1500_.jpg',
-      amazonLink: 'https://amzn.to/3r9rvhm',
-      description: 'Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, ',
-      price: '77990',
+      id: 10,
+      category: 'mobiles',
+      title: " Samsung S24",
+      imgSrc: 'https://m.media-amazon.com/images/I/719PYirSevL._SX679_.jpg',
+      amazonLink: 'https://amzn.to/3PuckZp',
+      description: 'Samsung Galaxy S24 5G AI Smartphone (Onyx Black, 8GB, 256GB Storage) ',
+      price: '79999',
     },
 
 

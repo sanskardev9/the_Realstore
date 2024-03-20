@@ -20,30 +20,30 @@ const ProductDetails = ({cart, setCart}) => {
     setRelatedProducts(relatedProducts)
   }, [id,product.category]);
   
-  const addToCart = (id, price, title, description, imgSrc) => {
-    const uniqueId = cart.length + 1;
-    const obj = {
-      id: uniqueId,
-      productId:id,
-      price,
-      title, 
-      description, 
-      imgSrc
-  }
+//   const addToCart = (id, price, title, description, imgSrc) => {
+//     const uniqueId = cart.length + 1;
+//     const obj = {
+//       id: uniqueId,
+//       productId:id,
+//       price,
+//       title, 
+//       description, 
+//       imgSrc
+//   }
   
-  setCart([...cart,obj]);
-//   console.log("Your Cart: ",cart)
-//   toast.success('Added to Cart', {
-//     position: "top-right",
-//     autoClose: 1500,
-//     hideProgressBar: false,
-//     closeOnClick: true,
-//     pauseOnHover: true,
-//     draggable: true,
-//     progress: undefined,
-//     theme: "dark",
-//     });
-}
+//   setCart([...cart,obj]);
+// //   console.log("Your Cart: ",cart)
+// //   toast.success('Added to Cart', {
+// //     position: "top-right",
+// //     autoClose: 1500,
+// //     hideProgressBar: false,
+// //     closeOnClick: true,
+// //     pauseOnHover: true,
+// //     draggable: true,
+// //     progress: undefined,
+// //     theme: "dark",
+// //     });
+// }
   
 
 

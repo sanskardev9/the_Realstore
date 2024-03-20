@@ -60,7 +60,7 @@ const Product = ({items, cart, setCart, cartData, setCartData, user}) => {
       });
 }
 
-console.log(user);
+// console.log(user);
  
   return (
     <>  
@@ -78,10 +78,10 @@ console.log(user);
       />
       <div className="container my-5">
         <div className="row">
-          {items.map((product) => {
-            return (
-              <>
-                <div key={product.id} className="col-lg-4 my-3">
+          {items.map((product) => (
+            // return (
+            //   <>
+                <div key={product.id} className="col-lg-4 col-md-5 my-3">
                   <div className="card" style={{ width: "18rem" }}>
                     <Link to={`/product/${product.id}`}
                       style={{
@@ -119,9 +119,9 @@ console.log(user);
                     </div>
                   </div>
                 </div>
-              </>
-            );
-          })}
+            //   </>
+            // );
+          ))}
         </div>
       </div>
     </>
@@ -164,14 +164,3 @@ export default Product;
 //       });
 //     }
 //   };
-
-
-
-
-
-
-
-
-
-
-

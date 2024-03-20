@@ -113,8 +113,75 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+    .nav-bar {
+        padding: 5px;
+      }
     
-  }
+      .brand {
+        font-size: 1.2rem;
+        margin-right: 100px;
+      }
+    
+      .search-bar {
+        margin-right: 50px;
+        width: 70%;
+      }
+    
+      .search-bar input {
+        width: 100px;
+      }
+    
+      .cart {
+        font-size: 5px;
+        width: 10%;
+        margin-right: 5px;  
+      }
+    
+      .nav-bar-wrapper {
+        padding: 10px;
+      }
+    
+      .Empty-msg {
+        margin-right: 200px;
+        margin-left: 10px;
+        margin-top: 200px;
+        width: 300px;
+      }
+    
+      .container-cart {
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+    
+      .Cart-div {
+        margin-right: 100px;
+
+      }
+    
+      .login-btn {
+        font-size: 5px;
+        width: 10%;
+        margin-left: 5px;
+      }
+    
+      .user-data {
+        font-size: 8px;
+        width: 30%;
+      }
+    
+      .logout-btn {
+        font-size: 5px;
+        width: 10%;
+        margin-left: 5px;
+      }
+    
+      .mx-5 {
+        margin-right: 10rem !important;
+        margin-left: 1rem !important;
+      }
+    }
+  
   
   @media only screen and (min-width: 601px) and (max-width: 1024px) {
     
