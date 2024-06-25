@@ -23,7 +23,7 @@ Installation and Setup :-
 
 Clone the repository : git clone https://github.com/sanskardev9/the_Realstore.git
 
-Install dependencies : npm install
+Install dependencies : npm install vite --save-dev
 
 Run the application : npm start
 
