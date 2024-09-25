@@ -35,7 +35,7 @@ npm install
 To start the application, run: 
 npm run dev
 
-The application will be running on http://localhost:3000.
+The application will be running on http://localhost:5173.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request if you want to contribute to this project.
