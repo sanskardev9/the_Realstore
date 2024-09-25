@@ -26,7 +26,7 @@ Real Store is a front-end e-commerce website built with React.js. The project ai
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sanskardev09/real-store.git](https://github.com/sanskardev9/the_Realstore.git
+   git clone https://github.com/sanskardev9/the_Realstore.git
 
 ## Install the dependencies:
 npm install
