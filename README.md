@@ -15,7 +15,7 @@ Real Store is a front-end e-commerce website built with React.js. The project ai
 - React.js
 - JavaScript
 - HTML & CSS
-- Redux Toolkit (for state management)
+- React Hooks (for state management)
 - Bootstrap (for styling)
 
 ## Features
