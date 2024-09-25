@@ -32,7 +32,7 @@ Real Store is a front-end e-commerce website built with React.js. The project ai
 npm install
 
 ## Usage
-To start the application, 
+To start the application, run: 
 npm run dev
 
 The application will be running on http://localhost:3000.
